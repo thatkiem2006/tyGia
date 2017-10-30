@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewDelegate{
+class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewDelegate , UITextFieldDelegate{
 
       let mang : [String] = ["mot","hai","ba","bon","nam","sau"]
     var mang2 = [getTyGia]()
@@ -17,10 +17,13 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     
     var selectedCuntry1 : Bool = false
     var selectedCuntry2 : Bool = false
-
+    var rate1: Float = 0
+    var rate2: Float = 0
+    
     
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var dayUpdate: UILabel!
+    @IBOutlet weak var viewAds: UIView!
     @IBOutlet weak var flag1: UIImageView!
     @IBOutlet weak var lblCuntry1: UILabel!
     @IBOutlet weak var flag2: UIImageView!
@@ -30,9 +33,26 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     
     let picker : UIPickerView = {
         let pick = UIPickerView()
-        pick.backgroundColor = UIColor.brown
+        pick.backgroundColor = UIColor.lightGray
         pick.translatesAutoresizingMaskIntoConstraints = false
         return pick
+    }()
+    
+    let viewtextfild : UIView = {
+        let vtf = UIView()
+        vtf.backgroundColor = UIColor.yellow
+        vtf.translatesAutoresizingMaskIntoConstraints = false
+        return vtf
+    }()
+
+    
+    let textfild : UITextField = {
+        let tf = UITextField()
+        tf.backgroundColor = UIColor.red
+        tf.layer.borderWidth = 2
+        tf.layer.backgroundColor = UIColor.gray.cgColor
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        return tf
     }()
     
     override func viewDidLoad() {
@@ -76,15 +96,41 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     }
 
     
+    // keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        return true
+    }
+
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        
         view.addSubview(picker)
-        picker.topAnchor.constraint(equalTo: getToday.bottomAnchor, constant: 0).isActive = true
-        picker.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-        picker.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-        picker.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+        picker.topAnchor.constraint(equalTo: getToday.bottomAnchor, constant: 20).isActive = true
+        picker.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
+        picker.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
+        picker.bottomAnchor.constraint(equalTo: viewAds.topAnchor, constant: -10).isActive = true
+        picker.layer.cornerRadius = 5
+        
         picker.isHidden = true
+        
+//        view.addSubview(viewtextfild)
+//        viewtextfild.topAnchor.constraint(equalTo: getToday.bottomAnchor, constant: 0).isActive = true
+//        viewtextfild.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+//        viewtextfild.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+//        viewtextfild.heightAnchor.constraint(equalToConstant: 60).isActive = true
+//        viewtextfild.isHidden = true
+//        
+//        viewtextfild.addSubview(textfild)
+//        textfild.topAnchor.constraint(equalTo: viewtextfild.topAnchor, constant: 10).isActive = true
+//        textfild.leftAnchor.constraint(equalTo: viewtextfild.leftAnchor, constant: 20).isActive = true
+//        textfild.rightAnchor.constraint(equalTo: viewtextfild.rightAnchor, constant: -20).isActive = true
+//        textfild.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        //textfild.isHidden = true
         
         
     }
@@ -98,14 +144,25 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     @IBAction func actionCuntry1(_ sender: AnyObject) {
         selectedCuntry1 = !selectedCuntry1
         picker.isHidden = false
+        viewtextfild.isHidden = false
        
     }
     
     @IBAction func actionCuntry2(_ sender: AnyObject) {
         selectedCuntry2 = !selectedCuntry2
         picker.isHidden = false
-        
+        viewtextfild.isHidden = false
     }
+    
+
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "segue1") {
+            let vc = segue.destination as! CaculateViewController
+            vc.stringRecv = "\(rate1/rate2)"
+        }
+    }
+    
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -114,10 +171,7 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return mang2.count
     }
-    
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        return mang2[row].nameCuntry
-//    }
+
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let v = Bundle.main.loadNibNamed("TableViewCell", owner: self, options: nil)?[0] as! TableViewCell
@@ -132,15 +186,19 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         picker.isHidden = true
+        viewtextfild.isHidden = true
         if selectedCuntry1 {
             lblCuntry1.text = mang2[row].nameCuntry
             flag1.image = UIImage(named: dictionaryCuntry[mang2[row].codeCuntry]!)
+            rate1 = Float(mang2[row].rateCuntry)!
+            
             selectedCuntry1 = false
         }
         if selectedCuntry2 {
             lblCuntry2.text = mang2[row].nameCuntry
             flag2.image = UIImage(named: dictionaryCuntry[mang2[row].codeCuntry]!)
             selectedCuntry2 = false
+            rate2 = Float(mang2[row].rateCuntry)!
         }
     }
 

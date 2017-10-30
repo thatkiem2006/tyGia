@@ -18,6 +18,7 @@
 		3464F0AA1FA6C8D500E8A9D4 /* tyGia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3464F0A81FA6C8D500E8A9D4 /* tyGia.xcdatamodeld */; };
 		3464F0AC1FA6C8D500E8A9D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3464F0AB1FA6C8D500E8A9D4 /* Assets.xcassets */; };
 		3464F0AF1FA6C8D500E8A9D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3464F0AD1FA6C8D500E8A9D4 /* LaunchScreen.storyboard */; };
+		34E9C2E41FA72F82008CB5C7 /* CaculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E9C2E31FA72F82008CB5C7 /* CaculateViewController.swift */; };
 		D77D575190E120D38C05B8D3 /* Pods_tyGia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AEDEC745BDA49C8AACC1288 /* Pods_tyGia.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		3464F0AB1FA6C8D500E8A9D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3464F0AE1FA6C8D500E8A9D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3464F0B01FA6C8D500E8A9D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34E9C2E31FA72F82008CB5C7 /* CaculateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaculateViewController.swift; sourceTree = "<group>"; };
 		3AEDEC745BDA49C8AACC1288 /* Pods_tyGia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tyGia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E9AE605F0E2A839C33F482 /* Pods-tyGia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tyGia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tyGia/Pods-tyGia.debug.xcconfig"; sourceTree = "<group>"; };
 		DD54463FC2E741BBDFBBF931 /* Pods-tyGia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tyGia.release.xcconfig"; path = "Pods/Target Support Files/Pods-tyGia/Pods-tyGia.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				3464F0A11FA6C8D500E8A9D4 /* AppDelegate.swift */,
 				3464F0A31FA6C8D500E8A9D4 /* ViewController.swift */,
 				34145F281FA6FE9F00449581 /* TableViewCell.swift */,
+				34E9C2E31FA72F82008CB5C7 /* CaculateViewController.swift */,
 				34145F291FA6FE9F00449581 /* TableViewCell.xib */,
 				34145F261FA6D90000449581 /* jsonGet.swift */,
 				3464F0A51FA6C8D500E8A9D4 /* Main.storyboard */,
@@ -243,6 +246,7 @@
 				3464F0A41FA6C8D500E8A9D4 /* ViewController.swift in Sources */,
 				3464F0A21FA6C8D500E8A9D4 /* AppDelegate.swift in Sources */,
 				34145F271FA6D90000449581 /* jsonGet.swift in Sources */,
+				34E9C2E41FA72F82008CB5C7 /* CaculateViewController.swift in Sources */,
 				3464F0AA1FA6C8D500E8A9D4 /* tyGia.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
