@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		34145F251FA6D2AF00449581 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34145F241FA6D2AF00449581 /* Alamofire.framework */; };
 		34145F271FA6D90000449581 /* jsonGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34145F261FA6D90000449581 /* jsonGet.swift */; };
+		34145F2A1FA6FE9F00449581 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34145F281FA6FE9F00449581 /* TableViewCell.swift */; };
+		34145F2B1FA6FE9F00449581 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34145F291FA6FE9F00449581 /* TableViewCell.xib */; };
+		34145F2D1FA7015C00449581 /* maxresdefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 34145F2C1FA7015C00449581 /* maxresdefault.jpg */; };
 		3464F0A21FA6C8D500E8A9D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3464F0A11FA6C8D500E8A9D4 /* AppDelegate.swift */; };
 		3464F0A41FA6C8D500E8A9D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3464F0A31FA6C8D500E8A9D4 /* ViewController.swift */; };
 		3464F0A71FA6C8D500E8A9D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3464F0A51FA6C8D500E8A9D4 /* Main.storyboard */; };
@@ -21,6 +24,9 @@
 /* Begin PBXFileReference section */
 		34145F241FA6D2AF00449581 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../../../Users/adv/Library/Developer/Xcode/DerivedData/tyGia-gdkqhucwcvxygqeovecpozfjthsk/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		34145F261FA6D90000449581 /* jsonGet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsonGet.swift; sourceTree = "<group>"; };
+		34145F281FA6FE9F00449581 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		34145F291FA6FE9F00449581 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		34145F2C1FA7015C00449581 /* maxresdefault.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = maxresdefault.jpg; path = ../../../../../../../Users/adv/Desktop/maxresdefault.jpg; sourceTree = "<group>"; };
 		3464F09E1FA6C8D500E8A9D4 /* tyGia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tyGia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3464F0A11FA6C8D500E8A9D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3464F0A31FA6C8D500E8A9D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,8 +76,11 @@
 			children = (
 				3464F0A11FA6C8D500E8A9D4 /* AppDelegate.swift */,
 				3464F0A31FA6C8D500E8A9D4 /* ViewController.swift */,
+				34145F281FA6FE9F00449581 /* TableViewCell.swift */,
+				34145F291FA6FE9F00449581 /* TableViewCell.xib */,
 				34145F261FA6D90000449581 /* jsonGet.swift */,
 				3464F0A51FA6C8D500E8A9D4 /* Main.storyboard */,
+				34145F2C1FA7015C00449581 /* maxresdefault.jpg */,
 				3464F0AB1FA6C8D500E8A9D4 /* Assets.xcassets */,
 				3464F0AD1FA6C8D500E8A9D4 /* LaunchScreen.storyboard */,
 				3464F0B01FA6C8D500E8A9D4 /* Info.plist */,
@@ -162,6 +171,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3464F0AF1FA6C8D500E8A9D4 /* LaunchScreen.storyboard in Resources */,
+				34145F2B1FA6FE9F00449581 /* TableViewCell.xib in Resources */,
+				34145F2D1FA7015C00449581 /* maxresdefault.jpg in Resources */,
 				3464F0AC1FA6C8D500E8A9D4 /* Assets.xcassets in Resources */,
 				3464F0A71FA6C8D500E8A9D4 /* Main.storyboard in Resources */,
 			);
@@ -228,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34145F2A1FA6FE9F00449581 /* TableViewCell.swift in Sources */,
 				3464F0A41FA6C8D500E8A9D4 /* ViewController.swift in Sources */,
 				3464F0A21FA6C8D500E8A9D4 /* AppDelegate.swift in Sources */,
 				34145F271FA6D90000449581 /* jsonGet.swift in Sources */,

@@ -34,16 +34,23 @@
                                 <constraints>
                                     <constraint firstItem="7Ep-Pe-1b6" firstAttribute="centerY" secondItem="UB4-OG-ot4" secondAttribute="centerY" id="DBk-E8-5oJ"/>
                                     <constraint firstAttribute="height" constant="50" id="Dhq-HO-x6Y"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Is1-RC-srJ"/>
                                     <constraint firstItem="7Ep-Pe-1b6" firstAttribute="centerX" secondItem="UB4-OG-ot4" secondAttribute="centerX" id="Mf5-hI-EFV"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t7c-Yh-kSQ">
-                                <frame key="frameInset" minX="16" minY="195" width="343" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7c-Yh-kSQ" userLabel="ViewCuntry1">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7K-Za-3kn">
-                                        <frame key="frameInset" minX="81" minY="8" width="168" height="51"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLm-J9-YNI">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c1f-Fo-ChG">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="110" id="6mX-ir-DeO"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7K-Za-3kn">
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="actionCuntry1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tPb-oy-c3S"/>
@@ -51,6 +58,20 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="c1f-Fo-ChG" secondAttribute="bottom" constant="10" id="3S6-YT-ovu"/>
+                                    <constraint firstAttribute="trailing" secondItem="pLm-J9-YNI" secondAttribute="trailing" constant="10" id="7eD-4c-Wi2"/>
+                                    <constraint firstAttribute="trailing" secondItem="y7K-Za-3kn" secondAttribute="trailing" id="HWs-1w-4Jg"/>
+                                    <constraint firstItem="y7K-Za-3kn" firstAttribute="top" secondItem="t7c-Yh-kSQ" secondAttribute="top" id="Q3d-aa-QQW"/>
+                                    <constraint firstAttribute="bottom" secondItem="pLm-J9-YNI" secondAttribute="bottom" constant="10" id="QtA-E5-fCi"/>
+                                    <constraint firstItem="c1f-Fo-ChG" firstAttribute="leading" secondItem="t7c-Yh-kSQ" secondAttribute="leading" constant="10" id="ZJF-AP-3fS"/>
+                                    <constraint firstItem="pLm-J9-YNI" firstAttribute="top" secondItem="t7c-Yh-kSQ" secondAttribute="top" constant="10" id="jkV-Wl-fuV"/>
+                                    <constraint firstItem="pLm-J9-YNI" firstAttribute="leading" secondItem="c1f-Fo-ChG" secondAttribute="trailing" constant="20" id="lYe-tq-ybM"/>
+                                    <constraint firstItem="c1f-Fo-ChG" firstAttribute="top" secondItem="t7c-Yh-kSQ" secondAttribute="top" constant="10" id="mCi-dp-yin"/>
+                                    <constraint firstAttribute="height" constant="80" id="td4-WU-mAw"/>
+                                    <constraint firstItem="y7K-Za-3kn" firstAttribute="leading" secondItem="t7c-Yh-kSQ" secondAttribute="leading" id="tql-tX-OGb"/>
+                                    <constraint firstAttribute="bottom" secondItem="y7K-Za-3kn" secondAttribute="bottom" id="w6K-hQ-TZ6"/>
+                                </constraints>
                             </view>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="G8R-5I-Cjh">
                                 <frame key="frameInset" minX="24" minY="277" width="327" height="31"/>
@@ -75,13 +96,22 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="UB4-OG-ot4" secondAttribute="trailing" id="5Ea-PP-fIn"/>
+                            <constraint firstItem="UB4-OG-ot4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KhW-Fx-aBI"/>
                             <constraint firstItem="UB4-OG-ot4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="L2t-5N-GMX"/>
                             <constraint firstItem="UB4-OG-ot4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="NT4-Zv-yC9"/>
+                            <constraint firstAttribute="trailing" secondItem="t7c-Yh-kSQ" secondAttribute="trailing" constant="10" id="RgF-gv-WOw"/>
+                            <constraint firstItem="t7c-Yh-kSQ" firstAttribute="top" secondItem="UB4-OG-ot4" secondAttribute="bottom" constant="50" id="Vcq-Ir-OAx"/>
+                            <constraint firstAttribute="trailing" secondItem="UB4-OG-ot4" secondAttribute="trailing" id="icj-Mi-JDa"/>
+                            <constraint firstItem="t7c-Yh-kSQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="oor-DU-gPt"/>
+                            <constraint firstItem="UB4-OG-ot4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zc4-8V-uiu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="RATE" id="RsN-et-rfR"/>
                     <connections>
+                        <outlet property="dayUpdate" destination="7Ep-Pe-1b6" id="sLh-Z3-dSd"/>
+                        <outlet property="flag1" destination="c1f-Fo-ChG" id="wxZ-Bv-MZT"/>
                         <outlet property="indicator" destination="77E-Ag-frW" id="ElV-yu-pVl"/>
+                        <outlet property="lblCuntry1" destination="pLm-J9-YNI" id="746-KZ-AL7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

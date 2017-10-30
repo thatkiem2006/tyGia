@@ -15,7 +15,12 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     var mang2 = [getTyGia]()
     var mang3 : [AnyObject]! = nil
     
+    var selectedCuntry1 : Bool = false
+    
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var dayUpdate: UILabel!
+    @IBOutlet weak var flag1: UIImageView!
+    @IBOutlet weak var lblCuntry1: UILabel!
     
     
     let picker : UIPickerView = {
@@ -28,8 +33,7 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-                let queue1 = DispatchQueue(label: "queue1")
+        let queue1 = DispatchQueue(label: "queue1")
         
         queue1.async {
             Alamofire.request("http://floatrates.com/daily/usd.json").responseJSON { (response) in
@@ -49,13 +53,14 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
                         let rate = String(dict[key]!["rate"] as! Float)
                         self.mang2.append(getTyGia(nameCuntry: name, rateCuntry: rate, update: date, codeCuntry: code))
                         
-                        
-                        
+                        print("============\(code) ========= \(name) \n")
                     }
+                    
                     print(self.mang2[0].rateCuntry)
                     self.picker.delegate = self
                     self.picker.dataSource = self
                     self.indicator.stopAnimating()
+                    self.dayUpdate.text = self.mang2[0].update
                     
                 }
             }
@@ -63,10 +68,8 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
         
         indicator.hidesWhenStopped = true
         indicator.startAnimating()
-        
-       
-      
     }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -88,6 +91,7 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     }
 
     @IBAction func actionCuntry1(_ sender: AnyObject) {
+        selectedCuntry1 = !selectedCuntry1
         picker.isHidden = false
        
     }
@@ -105,8 +109,15 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
         return mang2.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return mang2[row].nameCuntry
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return mang2[row].nameCuntry
+//    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let v = Bundle.main.loadNibNamed("TableViewCell", owner: self, options: nil)?[0] as! TableViewCell
+        v.lbl.text = mang2[row].nameCuntry
+        v.img.image = UIImage(named: dictionaryCuntry[mang2[row].codeCuntry]!)
+        return v
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
@@ -115,6 +126,11 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         picker.isHidden = true
+        if selectedCuntry1 {
+            lblCuntry1.text = mang2[row].nameCuntry
+            flag1.image = UIImage(named: dictionaryCuntry[mang2[row].codeCuntry]!)
+            selectedCuntry1 = false
+        }
     }
 
 }
