@@ -1,0 +1,326 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3464F0A21FA6C8D500E8A9D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3464F0A11FA6C8D500E8A9D4 /* AppDelegate.swift */; };
+		3464F0A41FA6C8D500E8A9D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3464F0A31FA6C8D500E8A9D4 /* ViewController.swift */; };
+		3464F0A71FA6C8D500E8A9D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3464F0A51FA6C8D500E8A9D4 /* Main.storyboard */; };
+		3464F0AA1FA6C8D500E8A9D4 /* tyGia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3464F0A81FA6C8D500E8A9D4 /* tyGia.xcdatamodeld */; };
+		3464F0AC1FA6C8D500E8A9D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3464F0AB1FA6C8D500E8A9D4 /* Assets.xcassets */; };
+		3464F0AF1FA6C8D500E8A9D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3464F0AD1FA6C8D500E8A9D4 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3464F09E1FA6C8D500E8A9D4 /* tyGia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tyGia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3464F0A11FA6C8D500E8A9D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3464F0A31FA6C8D500E8A9D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3464F0A61FA6C8D500E8A9D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3464F0A91FA6C8D500E8A9D4 /* tyGia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tyGia.xcdatamodel; sourceTree = "<group>"; };
+		3464F0AB1FA6C8D500E8A9D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3464F0AE1FA6C8D500E8A9D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3464F0B01FA6C8D500E8A9D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3464F09B1FA6C8D500E8A9D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3464F0951FA6C8D500E8A9D4 = {
+			isa = PBXGroup;
+			children = (
+				3464F0A01FA6C8D500E8A9D4 /* tyGia */,
+				3464F09F1FA6C8D500E8A9D4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3464F09F1FA6C8D500E8A9D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3464F09E1FA6C8D500E8A9D4 /* tyGia.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3464F0A01FA6C8D500E8A9D4 /* tyGia */ = {
+			isa = PBXGroup;
+			children = (
+				3464F0A11FA6C8D500E8A9D4 /* AppDelegate.swift */,
+				3464F0A31FA6C8D500E8A9D4 /* ViewController.swift */,
+				3464F0A51FA6C8D500E8A9D4 /* Main.storyboard */,
+				3464F0AB1FA6C8D500E8A9D4 /* Assets.xcassets */,
+				3464F0AD1FA6C8D500E8A9D4 /* LaunchScreen.storyboard */,
+				3464F0B01FA6C8D500E8A9D4 /* Info.plist */,
+				3464F0A81FA6C8D500E8A9D4 /* tyGia.xcdatamodeld */,
+			);
+			path = tyGia;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3464F09D1FA6C8D500E8A9D4 /* tyGia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3464F0B31FA6C8D500E8A9D4 /* Build configuration list for PBXNativeTarget "tyGia" */;
+			buildPhases = (
+				3464F09A1FA6C8D500E8A9D4 /* Sources */,
+				3464F09B1FA6C8D500E8A9D4 /* Frameworks */,
+				3464F09C1FA6C8D500E8A9D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tyGia;
+			productName = tyGia;
+			productReference = 3464F09E1FA6C8D500E8A9D4 /* tyGia.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3464F0961FA6C8D500E8A9D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = AdnetPlus;
+				TargetAttributes = {
+					3464F09D1FA6C8D500E8A9D4 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = VX3NH7X54P;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3464F0991FA6C8D500E8A9D4 /* Build configuration list for PBXProject "tyGia" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3464F0951FA6C8D500E8A9D4;
+			productRefGroup = 3464F09F1FA6C8D500E8A9D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3464F09D1FA6C8D500E8A9D4 /* tyGia */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3464F09C1FA6C8D500E8A9D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3464F0AF1FA6C8D500E8A9D4 /* LaunchScreen.storyboard in Resources */,
+				3464F0AC1FA6C8D500E8A9D4 /* Assets.xcassets in Resources */,
+				3464F0A71FA6C8D500E8A9D4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3464F09A1FA6C8D500E8A9D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3464F0A41FA6C8D500E8A9D4 /* ViewController.swift in Sources */,
+				3464F0A21FA6C8D500E8A9D4 /* AppDelegate.swift in Sources */,
+				3464F0AA1FA6C8D500E8A9D4 /* tyGia.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3464F0A51FA6C8D500E8A9D4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3464F0A61FA6C8D500E8A9D4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3464F0AD1FA6C8D500E8A9D4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3464F0AE1FA6C8D500E8A9D4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3464F0B11FA6C8D500E8A9D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3464F0B21FA6C8D500E8A9D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3464F0B41FA6C8D500E8A9D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VX3NH7X54P;
+				INFOPLIST_FILE = tyGia/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adnetplus..tyGia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3464F0B51FA6C8D500E8A9D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VX3NH7X54P;
+				INFOPLIST_FILE = tyGia/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adnetplus..tyGia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3464F0991FA6C8D500E8A9D4 /* Build configuration list for PBXProject "tyGia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3464F0B11FA6C8D500E8A9D4 /* Debug */,
+				3464F0B21FA6C8D500E8A9D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3464F0B31FA6C8D500E8A9D4 /* Build configuration list for PBXNativeTarget "tyGia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3464F0B41FA6C8D500E8A9D4 /* Debug */,
+				3464F0B51FA6C8D500E8A9D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3464F0A81FA6C8D500E8A9D4 /* tyGia.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3464F0A91FA6C8D500E8A9D4 /* tyGia.xcdatamodel */,
+			);
+			currentVersion = 3464F0A91FA6C8D500E8A9D4 /* tyGia.xcdatamodel */;
+			path = tyGia.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3464F0961FA6C8D500E8A9D4 /* Project object */;
+}
