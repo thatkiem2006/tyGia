@@ -16,11 +16,16 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     var mang3 : [AnyObject]! = nil
     
     var selectedCuntry1 : Bool = false
+    var selectedCuntry2 : Bool = false
+
     
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var dayUpdate: UILabel!
     @IBOutlet weak var flag1: UIImageView!
     @IBOutlet weak var lblCuntry1: UILabel!
+    @IBOutlet weak var flag2: UIImageView!
+    @IBOutlet weak var lblCuntry2: UILabel!
+    @IBOutlet weak var getToday: UIView!
     
     
     let picker : UIPickerView = {
@@ -75,7 +80,7 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
         super.viewWillAppear(animated)
         
         view.addSubview(picker)
-        picker.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        picker.topAnchor.constraint(equalTo: getToday.bottomAnchor, constant: 0).isActive = true
         picker.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         picker.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         picker.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
@@ -97,6 +102,7 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     }
     
     @IBAction func actionCuntry2(_ sender: AnyObject) {
+        selectedCuntry2 = !selectedCuntry2
         picker.isHidden = false
         
     }
@@ -130,6 +136,11 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
             lblCuntry1.text = mang2[row].nameCuntry
             flag1.image = UIImage(named: dictionaryCuntry[mang2[row].codeCuntry]!)
             selectedCuntry1 = false
+        }
+        if selectedCuntry2 {
+            lblCuntry2.text = mang2[row].nameCuntry
+            flag2.image = UIImage(named: dictionaryCuntry[mang2[row].codeCuntry]!)
+            selectedCuntry2 = false
         }
     }
 
