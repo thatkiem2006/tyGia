@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34145F251FA6D2AF00449581 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34145F241FA6D2AF00449581 /* Alamofire.framework */; };
+		34145F271FA6D90000449581 /* jsonGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34145F261FA6D90000449581 /* jsonGet.swift */; };
 		3464F0A21FA6C8D500E8A9D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3464F0A11FA6C8D500E8A9D4 /* AppDelegate.swift */; };
 		3464F0A41FA6C8D500E8A9D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3464F0A31FA6C8D500E8A9D4 /* ViewController.swift */; };
 		3464F0A71FA6C8D500E8A9D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3464F0A51FA6C8D500E8A9D4 /* Main.storyboard */; };
 		3464F0AA1FA6C8D500E8A9D4 /* tyGia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3464F0A81FA6C8D500E8A9D4 /* tyGia.xcdatamodeld */; };
 		3464F0AC1FA6C8D500E8A9D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3464F0AB1FA6C8D500E8A9D4 /* Assets.xcassets */; };
 		3464F0AF1FA6C8D500E8A9D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3464F0AD1FA6C8D500E8A9D4 /* LaunchScreen.storyboard */; };
+		D77D575190E120D38C05B8D3 /* Pods_tyGia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AEDEC745BDA49C8AACC1288 /* Pods_tyGia.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34145F241FA6D2AF00449581 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../../../Users/adv/Library/Developer/Xcode/DerivedData/tyGia-gdkqhucwcvxygqeovecpozfjthsk/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		34145F261FA6D90000449581 /* jsonGet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsonGet.swift; sourceTree = "<group>"; };
 		3464F09E1FA6C8D500E8A9D4 /* tyGia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tyGia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3464F0A11FA6C8D500E8A9D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3464F0A31FA6C8D500E8A9D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +29,9 @@
 		3464F0AB1FA6C8D500E8A9D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3464F0AE1FA6C8D500E8A9D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3464F0B01FA6C8D500E8A9D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AEDEC745BDA49C8AACC1288 /* Pods_tyGia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tyGia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9E9AE605F0E2A839C33F482 /* Pods-tyGia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tyGia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tyGia/Pods-tyGia.debug.xcconfig"; sourceTree = "<group>"; };
+		DD54463FC2E741BBDFBBF931 /* Pods-tyGia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tyGia.release.xcconfig"; path = "Pods/Target Support Files/Pods-tyGia/Pods-tyGia.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34145F251FA6D2AF00449581 /* Alamofire.framework in Frameworks */,
+				D77D575190E120D38C05B8D3 /* Pods_tyGia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +52,8 @@
 			children = (
 				3464F0A01FA6C8D500E8A9D4 /* tyGia */,
 				3464F09F1FA6C8D500E8A9D4 /* Products */,
+				70430D1C652B0F9D5DEBBF74 /* Pods */,
+				41E06D05F981FE27926D6AB7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +70,7 @@
 			children = (
 				3464F0A11FA6C8D500E8A9D4 /* AppDelegate.swift */,
 				3464F0A31FA6C8D500E8A9D4 /* ViewController.swift */,
+				34145F261FA6D90000449581 /* jsonGet.swift */,
 				3464F0A51FA6C8D500E8A9D4 /* Main.storyboard */,
 				3464F0AB1FA6C8D500E8A9D4 /* Assets.xcassets */,
 				3464F0AD1FA6C8D500E8A9D4 /* LaunchScreen.storyboard */,
@@ -67,6 +80,24 @@
 			path = tyGia;
 			sourceTree = "<group>";
 		};
+		41E06D05F981FE27926D6AB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34145F241FA6D2AF00449581 /* Alamofire.framework */,
+				3AEDEC745BDA49C8AACC1288 /* Pods_tyGia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		70430D1C652B0F9D5DEBBF74 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C9E9AE605F0E2A839C33F482 /* Pods-tyGia.debug.xcconfig */,
+				DD54463FC2E741BBDFBBF931 /* Pods-tyGia.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +105,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3464F0B31FA6C8D500E8A9D4 /* Build configuration list for PBXNativeTarget "tyGia" */;
 			buildPhases = (
+				6F69F7AD19BCC7EF11BD00AA /* [CP] Check Pods Manifest.lock */,
 				3464F09A1FA6C8D500E8A9D4 /* Sources */,
 				3464F09B1FA6C8D500E8A9D4 /* Frameworks */,
 				3464F09C1FA6C8D500E8A9D4 /* Resources */,
+				ABF7CED8A9270A6AE2186CF9 /* [CP] Embed Pods Frameworks */,
+				184B707CFB7B6D6AD1C1E257 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,6 +169,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		184B707CFB7B6D6AD1C1E257 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tyGia/Pods-tyGia-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F69F7AD19BCC7EF11BD00AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tyGia-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABF7CED8A9270A6AE2186CF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-tyGia/Pods-tyGia-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tyGia/Pods-tyGia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3464F09A1FA6C8D500E8A9D4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -142,6 +230,7 @@
 			files = (
 				3464F0A41FA6C8D500E8A9D4 /* ViewController.swift in Sources */,
 				3464F0A21FA6C8D500E8A9D4 /* AppDelegate.swift in Sources */,
+				34145F271FA6D90000449581 /* jsonGet.swift in Sources */,
 				3464F0AA1FA6C8D500E8A9D4 /* tyGia.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +352,7 @@
 		};
 		3464F0B41FA6C8D500E8A9D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9E9AE605F0E2A839C33F482 /* Pods-tyGia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VX3NH7X54P;
@@ -276,6 +366,7 @@
 		};
 		3464F0B51FA6C8D500E8A9D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD54463FC2E741BBDFBBF931 /* Pods-tyGia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VX3NH7X54P;
@@ -306,6 +397,7 @@
 				3464F0B51FA6C8D500E8A9D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
