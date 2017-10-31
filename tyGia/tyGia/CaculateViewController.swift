@@ -12,6 +12,7 @@ class CaculateViewController: UIViewController {
 
     var stringRecv : String = ""
     @IBOutlet weak var lblResult: UILabel!
+    @IBOutlet weak var lblCopyright: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,5 +29,8 @@ class CaculateViewController: UIViewController {
         
     }
    
+    @IBAction func actionBtCopyright(_ sender: AnyObject) {
+        lblCopyright.text = "@Copyright:\n giacatluong86ht@gmail.com"
+    }
 
 }
