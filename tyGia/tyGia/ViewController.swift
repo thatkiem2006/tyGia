@@ -19,6 +19,7 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     var selectedCuntry2 : Bool = false
     var rate1: Float = 0
     var rate2: Float = 0
+    var today: String!
     
     
     @IBOutlet weak var indicator: UIActivityIndicatorView!
@@ -81,12 +82,18 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
                         
                         print("============\(code) ========= \(name) =============\(rate) \n")
                     }
+                   
                     
                     print(self.mang2[0].rateCuntry)
-                    self.picker.delegate = self
-                    self.picker.dataSource = self
+                    
                     self.indicator.stopAnimating()
                     self.dayUpdate.text = self.mang2[0].update
+                     self.mang2.append(getTyGia(nameCuntry: "America Dollar", rateCuntry: "1", update: "", codeCuntry: "USA"))
+                    
+                    //self.mang2.sorted(by: { $0.nameCuntry > $1.nameCuntry })
+                    self.mang2.sort { $0.nameCuntry < $1.nameCuntry }
+                    self.picker.delegate = self
+                    self.picker.dataSource = self
                     
                 }
             }
@@ -109,7 +116,13 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        //========navigationBar
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSForegroundColorAttributeName : UIColor.red,
+            NSFontAttributeName : UIFont(name: "Noteworthy", size: 20)!
+        ]
         
+        //======= picker
         view.addSubview(picker)
         picker.topAnchor.constraint(equalTo: getToday.bottomAnchor, constant: 20).isActive = true
         picker.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
@@ -118,26 +131,16 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
         picker.layer.cornerRadius = 5
         
         picker.isHidden = true
-        
-//        view.addSubview(viewtextfild)
-//        viewtextfild.topAnchor.constraint(equalTo: getToday.bottomAnchor, constant: 0).isActive = true
-//        viewtextfild.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-//        viewtextfild.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-//        viewtextfild.heightAnchor.constraint(equalToConstant: 60).isActive = true
-//        viewtextfild.isHidden = true
-//        
-//        viewtextfild.addSubview(textfild)
-//        textfild.topAnchor.constraint(equalTo: viewtextfild.topAnchor, constant: 10).isActive = true
-//        textfild.leftAnchor.constraint(equalTo: viewtextfild.leftAnchor, constant: 20).isActive = true
-//        textfild.rightAnchor.constraint(equalTo: viewtextfild.rightAnchor, constant: -20).isActive = true
-//        textfild.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        //textfild.isHidden = true
-        
-        
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        
         
         
     }
@@ -203,7 +206,14 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
        
         if selectedCuntry1 {
             lblCuntry1.text = mang2[row].nameCuntry
-            flag1.image = UIImage(named: dictionaryCuntry[mang2[row].codeCuntry]!)
+            
+            if let img6 = dictionaryCuntry[mang2[row].codeCuntry] {
+                flag1.image = UIImage(named: img6)
+            } else {
+                
+            }
+            
+            //flag1.image = UIImage(named: dictionaryCuntry[mang2[row].codeCuntry]!)
             rate1 = Float(mang2[row].rateCuntry)!
             
             print("***********\(mang2[row].nameCuntry)*******\(rate1)")
@@ -212,7 +222,14 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
         }
         if selectedCuntry2 {
             lblCuntry2.text = mang2[row].nameCuntry
-            flag2.image = UIImage(named: dictionaryCuntry[mang2[row].codeCuntry]!)
+            
+            if let img5 = dictionaryCuntry[mang2[row].codeCuntry] {
+                flag2.image = UIImage(named: img5)
+            } else {
+                
+            }
+            
+           // flag2.image = UIImage(named: dictionaryCuntry[mang2[row].codeCuntry]!)
             
             rate2 = Float(mang2[row].rateCuntry)!
             print("***********\(mang2[row].nameCuntry)*******\(rate2)")

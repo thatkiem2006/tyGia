@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--RATE-->
+        <!--Exchange rate-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="tyGia" customModuleProvider="target" sceneMemberID="viewController">
@@ -164,7 +164,7 @@
                             <constraint firstItem="qps-6G-rAd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="x9X-Xi-VxY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="RATE" id="RsN-et-rfR"/>
+                    <navigationItem key="navigationItem" title="Exchange rate" id="RsN-et-rfR"/>
                     <connections>
                         <outlet property="dayUpdate" destination="7Ep-Pe-1b6" id="sLh-Z3-dSd"/>
                         <outlet property="flag1" destination="c1f-Fo-ChG" id="wxZ-Bv-MZT"/>
@@ -199,26 +199,34 @@
                                     <constraint firstAttribute="height" constant="80" id="TNb-78-azg"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eWG-He-jyZ">
-                                <frame key="frameInset" minY="206" width="375" height="178"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWG-He-jyZ">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FE6-k5-jeU">
-                                        <frame key="frameInset" minX="19" width="348" height="170"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FE6-k5-jeU">
                                         <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="35"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.98823529409999999" green="0.30980392159999998" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="FE6-k5-jeU" firstAttribute="centerX" secondItem="eWG-He-jyZ" secondAttribute="centerX" id="ALI-tS-ygG"/>
+                                    <constraint firstItem="FE6-k5-jeU" firstAttribute="centerY" secondItem="eWG-He-jyZ" secondAttribute="centerY" id="FOg-9X-r2t"/>
+                                    <constraint firstAttribute="bottom" secondItem="FE6-k5-jeU" secondAttribute="bottom" constant="15" id="RYH-8i-wet"/>
+                                    <constraint firstItem="FE6-k5-jeU" firstAttribute="top" secondItem="eWG-He-jyZ" secondAttribute="top" constant="15" id="a6Y-Iy-unF"/>
+                                    <constraint firstItem="FE6-k5-jeU" firstAttribute="leading" secondItem="eWG-He-jyZ" secondAttribute="leading" constant="15" id="cdx-GO-JwB"/>
+                                    <constraint firstAttribute="trailing" secondItem="FE6-k5-jeU" secondAttribute="trailing" constant="15" id="hzD-bl-mF9"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.45098039220000002" green="0.30980392159999998" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="1Hz-4O-6Gg" firstAttribute="leading" secondItem="5aB-R3-v9A" secondAttribute="leading" id="02v-bz-18G"/>
+                            <constraint firstItem="eWG-He-jyZ" firstAttribute="leading" secondItem="5aB-R3-v9A" secondAttribute="leading" id="7YX-Sc-eWk"/>
                             <constraint firstItem="KmY-9s-FmY" firstAttribute="top" secondItem="1Hz-4O-6Gg" secondAttribute="bottom" id="XrH-Y9-5zT"/>
+                            <constraint firstAttribute="trailing" secondItem="eWG-He-jyZ" secondAttribute="trailing" id="bgB-jF-6kJ"/>
+                            <constraint firstItem="1Hz-4O-6Gg" firstAttribute="top" secondItem="eWG-He-jyZ" secondAttribute="bottom" constant="150" id="bzB-eg-PrK"/>
                             <constraint firstAttribute="trailing" secondItem="1Hz-4O-6Gg" secondAttribute="trailing" id="cnm-wo-YK6"/>
+                            <constraint firstItem="eWG-He-jyZ" firstAttribute="top" secondItem="Txi-NV-n8B" secondAttribute="bottom" constant="150" id="rND-Bb-FcD"/>
                         </constraints>
                     </view>
                     <connections>
@@ -234,9 +242,17 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kzx-VW-w2c" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t3n-Lq-l5n">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="t3n-Lq-l5n" customClass="AGNavigationBarShape" customModule="tyGia" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                <color key="value" red="1" green="0.93435156090000004" blue="0.58511946569999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shapeMode">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
