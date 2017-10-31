@@ -29,6 +29,7 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     @IBOutlet weak var flag2: UIImageView!
     @IBOutlet weak var lblCuntry2: UILabel!
     @IBOutlet weak var getToday: UIView!
+    @IBOutlet weak var number: UITextField!
     
     
     let picker : UIPickerView = {
@@ -78,7 +79,7 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
                         let rate = String(dict[key]!["rate"] as! Float)
                         self.mang2.append(getTyGia(nameCuntry: name, rateCuntry: rate, update: date, codeCuntry: code))
                         
-                        print("============\(code) ========= \(name) \n")
+                        print("============\(code) ========= \(name) =============\(rate) \n")
                     }
                     
                     print(self.mang2[0].rateCuntry)
@@ -159,7 +160,16 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "segue1") {
             let vc = segue.destination as! CaculateViewController
-            vc.stringRecv = "\(rate1/rate2)"
+            if number.text == "" {
+                vc.stringRecv = "\(rate2/rate1)"
+
+            } else if let number = Float(number.text!) {
+                let value = (rate2/rate1)*number
+                vc.stringRecv = "\(value)"
+            } else{
+                vc.stringRecv = "Please enter again!"
+            }
+            
         }
     }
     
@@ -176,7 +186,12 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let v = Bundle.main.loadNibNamed("TableViewCell", owner: self, options: nil)?[0] as! TableViewCell
         v.lbl.text = mang2[row].nameCuntry
-        v.img.image = UIImage(named: dictionaryCuntry[mang2[row].codeCuntry]!)
+        if let img6 = dictionaryCuntry[mang2[row].codeCuntry] {
+           v.img.image = UIImage(named: img6)
+        } else {
+            
+        }
+        
         return v
     }
     
@@ -185,21 +200,26 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        picker.isHidden = true
-        viewtextfild.isHidden = true
+       
         if selectedCuntry1 {
             lblCuntry1.text = mang2[row].nameCuntry
             flag1.image = UIImage(named: dictionaryCuntry[mang2[row].codeCuntry]!)
             rate1 = Float(mang2[row].rateCuntry)!
+            
+            print("***********\(mang2[row].nameCuntry)*******\(rate1)")
             
             selectedCuntry1 = false
         }
         if selectedCuntry2 {
             lblCuntry2.text = mang2[row].nameCuntry
             flag2.image = UIImage(named: dictionaryCuntry[mang2[row].codeCuntry]!)
-            selectedCuntry2 = false
+            
             rate2 = Float(mang2[row].rateCuntry)!
+            print("***********\(mang2[row].nameCuntry)*******\(rate2)")
+            selectedCuntry2 = false
         }
+        picker.isHidden = true
+        viewtextfild.isHidden = true
     }
 
 }

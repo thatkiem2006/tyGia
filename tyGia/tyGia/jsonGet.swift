@@ -103,4 +103,4 @@ var dictionaryCuntry : [String : String] = [
 "INR" : "Indian",
 "SEK" : "Swedish",
 "VND" : "Vietnamese",
-"PLN" : "Polish",]
+"PLN" : "Polish"]
