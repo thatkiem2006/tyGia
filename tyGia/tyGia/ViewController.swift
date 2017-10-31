@@ -167,7 +167,7 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
                 let value = (rate2/rate1)*number
                 vc.stringRecv = "\(value)"
             } else{
-                vc.stringRecv = "Please enter again!"
+                vc.stringRecv = "Plase enter again!"
             }
             
         }
