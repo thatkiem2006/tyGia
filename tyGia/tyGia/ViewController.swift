@@ -24,6 +24,7 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     var rate2: Float = 0
     var today: String!
     var  viewMore : UIView!
+    var dem: Int = 1
     
     
     @IBOutlet weak var indicator: UIActivityIndicatorView!
@@ -67,60 +68,10 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let queue1 = DispatchQueue(label: "queue1")
-        
-        queue1.async {
-            Alamofire.request("http://floatrates.com/daily/usd.json").responseJSON { (response) in
-                let result = response.result
-                if let dict = result.value as? Dictionary<String,AnyObject> {
-                    //print(dict)
-                    for (key,values) in dict {
-                        // print(dict[key]!)
-                        
-                        
-                        // self.mang3.append(dict[key]!)
-                        // print(self.mang3)
-                        //   mang2.append(getJson(nameCuntry:dict[key]!["name"] , rateCuntry: dict[key]!["rate"], date: dict[key]!["date"], codeCuntry: dict[key]!["code"])
-                        let date = dict[key]!["date"] as! String
-                        let name = dict[key]!["name"] as! String
-                        let code = dict[key]!["code"] as! String
-                        let rate = String(dict[key]!["rate"] as! Float)
-                        mang2.append(getTyGia(nameCuntry: name, rateCuntry: rate, update: date, codeCuntry: code))
-                        
-                        print("============\(code) ========= \(name) =============\(rate) \n")
-                    }
-                   
-                    print("=======**")
-                    print(mang2)
-                    
-                    self.indicator.stopAnimating()
-                    self.dayUpdate.text = mang2[0].update
-                     mang2.append(getTyGia(nameCuntry: "America Dollar", rateCuntry: "1", update: "", codeCuntry: "USA"))
-                    
-                    //self.mang2.sorted(by: { $0.nameCuntry > $1.nameCuntry })
-                    mang2.sort { $0.nameCuntry < $1.nameCuntry }
-                    self.picker.delegate = self
-                    self.picker.dataSource = self
-                    
-                }
-            }
-        }
-        
+        parseJson()
         indicator.hidesWhenStopped = true
         indicator.startAnimating()
-        
-        
-        
-        
-        
-        
-        
-
-        
-        
-        
-        
-        
+  
         
     }
 
@@ -175,8 +126,13 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        if dem == 1 {
+            getCoredataFunc()
+            dem = 2
+        } else  {
+            
+        }
         
-        getCoredataFunc()
         
         print("**********=")
         print("\(mangOffLine.count)")
@@ -192,12 +148,11 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
         viewMore.frame.origin.y = getToday.frame.origin.y + getToday.frame.size.height
         let btOffline = viewMore.viewWithTag(2) as! UIButton
         btOffline.addTarget(self, action: #selector(actionBtOffline), for: .touchUpInside)
+        let btSave = viewMore.viewWithTag(1) as! UIButton
+        btSave.addTarget(self, action: #selector(actionBtSave), for: .touchUpInside)
+        let btRefresh = viewMore.viewWithTag(3) as! UIButton
+        btRefresh.addTarget(self, action: #selector(parseJson), for: .touchUpInside)
         viewMore.isHidden = true
-        
-        
-        
-        
-        
         
     }
     
@@ -242,19 +197,112 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     func actionBtOffline(){
         getCoredata = !getCoredata
         let lbOfline = viewMore.viewWithTag(22) as! UILabel
+        let btOnOff = viewMore.viewWithTag(2) as! UIButton
         if getCoredata {
             lbOfline.text = "Online"
+            
+            btOnOff.setImage(UIImage(named: "online"), for: .normal)
         } else {
             lbOfline.text = "Offline"
+            btOnOff.setImage(UIImage(named: "offline"), for: .normal)
         }
         
         viewMore.isHidden = true
         picker.delegate = self
         picker.dataSource = self
-        self.dayUpdate.text = mangOffLine[0].update
+       // self.dayUpdate.text = mangOffLine[0].update
         
     }
     //==============================
+    
+    func actionBtSave(){
+        guard mang2.count > 5 else {
+            return
+        }
+        for i in 0 ..< mang2.count {
+            let newUser = NSEntityDescription.insertNewObject(forEntityName: "Tygia", into: context)
+            newUser.setValue(mang2[i].nameCuntry, forKey: "nameCuntry") //pasword
+            newUser.setValue(mang2[i].rateCuntry, forKey: "rateCuntry")
+            newUser.setValue(mang2[i].update, forKey: "update") //pasword
+            newUser.setValue(mang2[i].codeCuntry, forKey: "codeCuntry")
+            do {
+                try context.save()
+                print("saved")
+                print(newUser)
+                
+            } catch {
+            }
+        }
+        
+//        guard mangOffLine.count == 0 else {
+//            return mangOffLine.removeAll()
+//        }
+        
+        getCoredataFunc()
+
+        
+        
+    }
+    
+    
+    
+    //============================= parseJSON
+    
+    func parseJson(){
+    
+    let queue1 = DispatchQueue(label: "queue1")
+    
+    queue1.async {
+    Alamofire.request("http://floatrates.com/daily/usd.json").responseJSON { (response) in
+    let result = response.result
+    if let dict = result.value as? Dictionary<String,AnyObject> {
+    //print(dict)
+    for (key,values) in dict {
+    // print(dict[key]!)
+    
+    
+    // self.mang3.append(dict[key]!)
+    // print(self.mang3)
+    //   mang2.append(getJson(nameCuntry:dict[key]!["name"] , rateCuntry: dict[key]!["rate"], date: dict[key]!["date"], codeCuntry: dict[key]!["code"])
+    let date = dict[key]!["date"] as! String
+    let name = dict[key]!["name"] as! String
+    let code = dict[key]!["code"] as! String
+    let rate = String(dict[key]!["rate"] as! Float)
+    mang2.append(getTyGia(nameCuntry: name, rateCuntry: rate, update: date, codeCuntry: code))
+    
+    print("============\(code) ========= \(name) =============\(rate) \n")
+    }
+    
+    print("=======**")
+    print(mang2)
+    
+    self.indicator.stopAnimating()
+    self.dayUpdate.text = mang2[0].update
+    mang2.append(getTyGia(nameCuntry: "America Dollar", rateCuntry: "1", update: "", codeCuntry: "USA"))
+    
+    //self.mang2.sorted(by: { $0.nameCuntry > $1.nameCuntry })
+    mang2.sort { $0.nameCuntry < $1.nameCuntry }
+    self.picker.delegate = self
+    self.picker.dataSource = self
+    
+    }
+    }
+    }
+
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //===========================
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -312,6 +360,9 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
                 
                 rate1 = Float(mangOffLine[row].rateCuntry)!
             } else {
+                guard   mang2.count > 5  else {
+                   return
+                }
                 lblCuntry1.text = mang2[row].nameCuntry
                 if let img6 = dictionaryCuntry[mang2[row].codeCuntry] {
                     flag1.image = UIImage(named: img6)
@@ -334,6 +385,9 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
                 }
                 rate2 = Float(mangOffLine[row].rateCuntry)!
             } else {
+                guard   mang2.count > 5  else {
+                    return
+                }
                 lblCuntry2.text = mang2[row].nameCuntry
                 if let img5 = dictionaryCuntry[mang2[row].codeCuntry] {
                     flag2.image = UIImage(named: img5)
@@ -358,15 +412,10 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Tygia")
         request.returnsObjectsAsFaults = false
-        
-        
         do {
             let results = try context.fetch(request)
             if results.count > 0 {
                 for result in results as! [NSManagedObject]  {
-                    
-                    
-                    
                     guard let nameCuntry = result.value(forKey: "nameCuntry") else {
                         return
                     }
@@ -379,6 +428,8 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
                     guard let codeCuntry = result.value(forKey: "codeCuntry") else {
                         return
                     }
+                    
+                    
                     
                     mangOffLine.append(getTyGia(nameCuntry: nameCuntry as! String, rateCuntry: rateCuntry as! String, update: update as! String, codeCuntry: codeCuntry as! String))
                     

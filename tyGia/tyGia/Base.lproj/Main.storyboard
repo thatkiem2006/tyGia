@@ -266,23 +266,6 @@
                                     <constraint firstAttribute="trailing" secondItem="FE6-k5-jeU" secondAttribute="trailing" constant="15" id="hzD-bl-mF9"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiZ-4g-E8v">
-                                <frame key="frameInset" minX="281" minY="97" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="save"/>
-                                <connections>
-                                    <action selector="actionSave:" destination="YXO-Vt-Wnr" eventType="touchUpInside" id="K83-n6-eej"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zp-Se-YjQ">
-                                <frame key="frameInset" minX="281" minY="135" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="get"/>
-                                <connections>
-                                    <action selector="actionGet:" destination="YXO-Vt-Wnr" eventType="touchUpInside" id="Wx1-Hj-r1G"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Erf-F2-JO1"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.45098039220000002" green="0.30980392159999998" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -331,7 +314,4 @@
             <point key="canvasLocation" x="300" y="124"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="pSO-R6-bKO"/>
-    </inferredMetricsTieBreakers>
 </document>
