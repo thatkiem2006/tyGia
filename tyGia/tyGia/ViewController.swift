@@ -151,7 +151,7 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
         let btSave = viewMore.viewWithTag(1) as! UIButton
         btSave.addTarget(self, action: #selector(actionBtSave), for: .touchUpInside)
         let btRefresh = viewMore.viewWithTag(3) as! UIButton
-        btRefresh.addTarget(self, action: #selector(parseJson), for: .touchUpInside)
+        btRefresh.addTarget(self, action: #selector(actionRefresh), for: .touchUpInside)
         viewMore.isHidden = true
         
     }
@@ -210,15 +210,44 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
         viewMore.isHidden = true
         picker.delegate = self
         picker.dataSource = self
-       // self.dayUpdate.text = mangOffLine[0].update
+        self.dayUpdate.text = mangOffLine[0].update
         
     }
+    
+    //==============================
+    
+    func actionRefresh(){
+        mang2.removeAll()
+        parseJson()
+        guard mang2.count > 5 else {
+            return
+        }
+        self.dayUpdate.text = mang2[0].update
+    }
+    
+    
     //==============================
     
     func actionBtSave(){
         guard mang2.count > 5 else {
             return
         }
+        
+        
+
+            
+            let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Tygia")
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+            
+            do {
+                try context.execute(deleteRequest)
+                try context.save()
+            } catch {
+                print ("There was an error")
+            }
+        
+        
+        
         for i in 0 ..< mang2.count {
             let newUser = NSEntityDescription.insertNewObject(forEntityName: "Tygia", into: context)
             newUser.setValue(mang2[i].nameCuntry, forKey: "nameCuntry") //pasword
@@ -234,9 +263,7 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
             }
         }
         
-//        guard mangOffLine.count == 0 else {
-//            return mangOffLine.removeAll()
-//        }
+
         
         getCoredataFunc()
 
@@ -415,6 +442,10 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
         do {
             let results = try context.fetch(request)
             if results.count > 0 {
+                
+                mangOffLine.removeAll()
+                
+                
                 for result in results as! [NSManagedObject]  {
                     guard let nameCuntry = result.value(forKey: "nameCuntry") else {
                         return
