@@ -8,11 +8,14 @@
 
 import UIKit
 import Alamofire
+import CoreData
 
 class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewDelegate , UITextFieldDelegate{
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
       let mang : [String] = ["mot","hai","ba","bon","nam","sau"]
-    var mang2 = [getTyGia]()
+    var mangOffLine = [getTyGia]()
     var mang3 : [AnyObject]! = nil
     
     var selectedCuntry1 : Bool = false
@@ -20,6 +23,7 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     var rate1: Float = 0
     var rate2: Float = 0
     var today: String!
+    var  viewMore : UIView!
     
     
     @IBOutlet weak var indicator: UIActivityIndicatorView!
@@ -31,6 +35,9 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     @IBOutlet weak var lblCuntry2: UILabel!
     @IBOutlet weak var getToday: UIView!
     @IBOutlet weak var number: UITextField!
+    @IBOutlet weak var viewCuntry1: UIView!
+    
+    
     
     
     let picker : UIPickerView = {
@@ -78,20 +85,20 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
                         let name = dict[key]!["name"] as! String
                         let code = dict[key]!["code"] as! String
                         let rate = String(dict[key]!["rate"] as! Float)
-                        self.mang2.append(getTyGia(nameCuntry: name, rateCuntry: rate, update: date, codeCuntry: code))
+                        mang2.append(getTyGia(nameCuntry: name, rateCuntry: rate, update: date, codeCuntry: code))
                         
                         print("============\(code) ========= \(name) =============\(rate) \n")
                     }
                    
-                    
-                    print(self.mang2[0].rateCuntry)
+                    print("=======**")
+                    print(mang2)
                     
                     self.indicator.stopAnimating()
-                    self.dayUpdate.text = self.mang2[0].update
-                     self.mang2.append(getTyGia(nameCuntry: "America Dollar", rateCuntry: "1", update: "", codeCuntry: "USA"))
+                    self.dayUpdate.text = mang2[0].update
+                     mang2.append(getTyGia(nameCuntry: "America Dollar", rateCuntry: "1", update: "", codeCuntry: "USA"))
                     
                     //self.mang2.sorted(by: { $0.nameCuntry > $1.nameCuntry })
-                    self.mang2.sort { $0.nameCuntry < $1.nameCuntry }
+                    mang2.sort { $0.nameCuntry < $1.nameCuntry }
                     self.picker.delegate = self
                     self.picker.dataSource = self
                     
@@ -101,6 +108,20 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
         
         indicator.hidesWhenStopped = true
         indicator.startAnimating()
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -131,6 +152,20 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
         picker.layer.cornerRadius = 5
         
         picker.isHidden = true
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -141,9 +176,35 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
         super.viewDidAppear(animated)
         
         
+        getCoredataFunc()
+        
+        print("**********=")
+        print("\(mangOffLine.count)")
+        
+        self.picker.delegate = self
+        self.picker.dataSource = self
+        
+        
+        //===================
+        viewMore = Bundle.main.loadNibNamed("viewMore", owner: self, options: nil)?.first as! UIView
+        view.addSubview(viewMore)
+        viewMore.center.x =  getToday.center.x
+        viewMore.frame.origin.y = getToday.frame.origin.y + getToday.frame.size.height
+        let btOffline = viewMore.viewWithTag(2) as! UIButton
+        btOffline.addTarget(self, action: #selector(actionBtOffline), for: .touchUpInside)
+        viewMore.isHidden = true
+        
+        
+        
+        
         
         
     }
+    
+    @IBAction func actionMore(_ sender: AnyObject) {
+        viewMore.isHidden = !viewMore.isHidden
+    }
+    
 
     @IBAction func actionCuntry1(_ sender: AnyObject) {
         selectedCuntry1 = !selectedCuntry1
@@ -176,26 +237,59 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
         }
     }
     
+    //===========================
     
-    
+    func actionBtOffline(){
+        getCoredata = !getCoredata
+        let lbOfline = viewMore.viewWithTag(22) as! UILabel
+        if getCoredata {
+            lbOfline.text = "Online"
+        } else {
+            lbOfline.text = "Offline"
+        }
+        
+        viewMore.isHidden = true
+        picker.delegate = self
+        picker.dataSource = self
+        self.dayUpdate.text = mangOffLine[0].update
+        
+    }
+    //==============================
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return mang2.count
-    }
+        if getCoredata {
+            return mangOffLine.count
+        } else {
+            return mang2.count
+
+        }
+      }
 
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        let v = Bundle.main.loadNibNamed("TableViewCell", owner: self, options: nil)?[0] as! TableViewCell
-        v.lbl.text = mang2[row].nameCuntry
-        if let img6 = dictionaryCuntry[mang2[row].codeCuntry] {
-           v.img.image = UIImage(named: img6)
-        } else {
-            
-        }
         
-        return v
+        let v = Bundle.main.loadNibNamed("TableViewCell", owner: self, options: nil)?[0] as! TableViewCell
+        
+        if getCoredata {
+                            v.lbl.text = mangOffLine[row].nameCuntry
+                            if let img6 = dictionaryCuntry[mangOffLine[row].codeCuntry] {
+                                v.img.image = UIImage(named: img6)
+                            } else {
+                                
+                            }
+                        return v
+                } else {
+                    v.lbl.text = mang2[row].nameCuntry
+                    if let img6 = dictionaryCuntry[mang2[row].codeCuntry] {
+                            v.img.image = UIImage(named: img6)
+                    } else {
+                
+                            }
+            return v
+        }
+       
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
@@ -205,39 +299,107 @@ class ViewController: UIViewController  , UIPickerViewDataSource , UIPickerViewD
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
        
         if selectedCuntry1 {
-            lblCuntry1.text = mang2[row].nameCuntry
             
-            if let img6 = dictionaryCuntry[mang2[row].codeCuntry] {
-                flag1.image = UIImage(named: img6)
-            } else {
+            if getCoredata == true {
+                lblCuntry1.text = mangOffLine[row].nameCuntry
+                //flag1.image = UIImage(named: mangOffLine[row].codeCuntry)
                 
+                if let img6 = dictionaryCuntry[mangOffLine[row].codeCuntry] {
+                    flag1.image = UIImage(named: img6)
+                } else {
+                    
+                }
+                
+                rate1 = Float(mangOffLine[row].rateCuntry)!
+            } else {
+                lblCuntry1.text = mang2[row].nameCuntry
+                if let img6 = dictionaryCuntry[mang2[row].codeCuntry] {
+                    flag1.image = UIImage(named: img6)
+                } else {
+                        }
+                rate1 = Float(mang2[row].rateCuntry)!
             }
-            
-            //flag1.image = UIImage(named: dictionaryCuntry[mang2[row].codeCuntry]!)
-            rate1 = Float(mang2[row].rateCuntry)!
-            
-            print("***********\(mang2[row].nameCuntry)*******\(rate1)")
             
             selectedCuntry1 = false
         }
         if selectedCuntry2 {
-            lblCuntry2.text = mang2[row].nameCuntry
-            
-            if let img5 = dictionaryCuntry[mang2[row].codeCuntry] {
-                flag2.image = UIImage(named: img5)
-            } else {
+            if getCoredata {
+                lblCuntry2.text = mangOffLine[row].nameCuntry
+                //flag2.image = UIImage(named: mangOffLine[row].codeCuntry)
                 
+                if let img6 = dictionaryCuntry[mangOffLine[row].codeCuntry] {
+                    flag2.image = UIImage(named: img6)
+                } else {
+                    
+                }
+                rate2 = Float(mangOffLine[row].rateCuntry)!
+            } else {
+                lblCuntry2.text = mang2[row].nameCuntry
+                if let img5 = dictionaryCuntry[mang2[row].codeCuntry] {
+                    flag2.image = UIImage(named: img5)
+                } else {
+                        }
+                rate2 = Float(mang2[row].rateCuntry)!
             }
             
-           // flag2.image = UIImage(named: dictionaryCuntry[mang2[row].codeCuntry]!)
-            
-            rate2 = Float(mang2[row].rateCuntry)!
-            print("***********\(mang2[row].nameCuntry)*******\(rate2)")
+
             selectedCuntry2 = false
         }
         picker.isHidden = true
         viewtextfild.isHidden = true
     }
+    
+    
+    
+    
+    
+    
+    func getCoredataFunc(){
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Tygia")
+        request.returnsObjectsAsFaults = false
+        
+        
+        do {
+            let results = try context.fetch(request)
+            if results.count > 0 {
+                for result in results as! [NSManagedObject]  {
+                    
+                    
+                    
+                    guard let nameCuntry = result.value(forKey: "nameCuntry") else {
+                        return
+                    }
+                    guard let rateCuntry = result.value(forKey: "rateCuntry") else {
+                        return
+                    }
+                    guard let update = result.value(forKey: "update") else {
+                        return
+                    }
+                    guard let codeCuntry = result.value(forKey: "codeCuntry") else {
+                        return
+                    }
+                    
+                    mangOffLine.append(getTyGia(nameCuntry: nameCuntry as! String, rateCuntry: rateCuntry as! String, update: update as! String, codeCuntry: codeCuntry as! String))
+                    
+                }
+                
+                print("*********************")
+                print(mangOffLine[1].nameCuntry)
+                
+                          }
+            
+        } catch {
+            
+        }
+        
+        
+    }
+    
+    
+    
+    
+    
 
 }
 

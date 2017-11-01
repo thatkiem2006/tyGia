@@ -14,12 +14,14 @@
 		34145F2D1FA7015C00449581 /* maxresdefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 34145F2C1FA7015C00449581 /* maxresdefault.jpg */; };
 		345397851FA82E7100A5D7BB /* AGNavigationBarShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345397841FA82E7100A5D7BB /* AGNavigationBarShape.swift */; };
 		345397871FA84B2200A5D7BB /* TGResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345397861FA84B2200A5D7BB /* TGResultViewController.swift */; };
+		345397891FA86BF800A5D7BB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345397881FA86BF800A5D7BB /* CoreData.framework */; };
 		3464F0A21FA6C8D500E8A9D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3464F0A11FA6C8D500E8A9D4 /* AppDelegate.swift */; };
 		3464F0A41FA6C8D500E8A9D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3464F0A31FA6C8D500E8A9D4 /* ViewController.swift */; };
 		3464F0A71FA6C8D500E8A9D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3464F0A51FA6C8D500E8A9D4 /* Main.storyboard */; };
 		3464F0AA1FA6C8D500E8A9D4 /* tyGia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3464F0A81FA6C8D500E8A9D4 /* tyGia.xcdatamodeld */; };
 		3464F0AC1FA6C8D500E8A9D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3464F0AB1FA6C8D500E8A9D4 /* Assets.xcassets */; };
 		3464F0AF1FA6C8D500E8A9D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3464F0AD1FA6C8D500E8A9D4 /* LaunchScreen.storyboard */; };
+		3479A1671FA964B300081EAB /* viewMore.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3479A1661FA964B300081EAB /* viewMore.xib */; };
 		34E9C2E41FA72F82008CB5C7 /* CaculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E9C2E31FA72F82008CB5C7 /* CaculateViewController.swift */; };
 		D77D575190E120D38C05B8D3 /* Pods_tyGia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AEDEC745BDA49C8AACC1288 /* Pods_tyGia.framework */; };
 /* End PBXBuildFile section */
@@ -32,6 +34,7 @@
 		34145F2C1FA7015C00449581 /* maxresdefault.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = maxresdefault.jpg; path = ../../../../../../../Users/adv/Desktop/maxresdefault.jpg; sourceTree = "<group>"; };
 		345397841FA82E7100A5D7BB /* AGNavigationBarShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGNavigationBarShape.swift; sourceTree = "<group>"; };
 		345397861FA84B2200A5D7BB /* TGResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TGResultViewController.swift; sourceTree = "<group>"; };
+		345397881FA86BF800A5D7BB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3464F09E1FA6C8D500E8A9D4 /* tyGia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tyGia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3464F0A11FA6C8D500E8A9D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3464F0A31FA6C8D500E8A9D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		3464F0AB1FA6C8D500E8A9D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3464F0AE1FA6C8D500E8A9D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3464F0B01FA6C8D500E8A9D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3479A1661FA964B300081EAB /* viewMore.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = viewMore.xib; sourceTree = "<group>"; };
 		34E9C2E31FA72F82008CB5C7 /* CaculateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaculateViewController.swift; sourceTree = "<group>"; };
 		3AEDEC745BDA49C8AACC1288 /* Pods_tyGia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tyGia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E9AE605F0E2A839C33F482 /* Pods-tyGia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tyGia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tyGia/Pods-tyGia.debug.xcconfig"; sourceTree = "<group>"; };
@@ -51,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				345397891FA86BF800A5D7BB /* CoreData.framework in Frameworks */,
 				34145F251FA6D2AF00449581 /* Alamofire.framework in Frameworks */,
 				D77D575190E120D38C05B8D3 /* Pods_tyGia.framework in Frameworks */,
 			);
@@ -87,6 +92,7 @@
 				345397841FA82E7100A5D7BB /* AGNavigationBarShape.swift */,
 				345397861FA84B2200A5D7BB /* TGResultViewController.swift */,
 				34145F291FA6FE9F00449581 /* TableViewCell.xib */,
+				3479A1661FA964B300081EAB /* viewMore.xib */,
 				34145F261FA6D90000449581 /* jsonGet.swift */,
 				3464F0A51FA6C8D500E8A9D4 /* Main.storyboard */,
 				34145F2C1FA7015C00449581 /* maxresdefault.jpg */,
@@ -101,6 +107,7 @@
 		41E06D05F981FE27926D6AB7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				345397881FA86BF800A5D7BB /* CoreData.framework */,
 				34145F241FA6D2AF00449581 /* Alamofire.framework */,
 				3AEDEC745BDA49C8AACC1288 /* Pods_tyGia.framework */,
 			);
@@ -183,6 +190,7 @@
 				34145F2B1FA6FE9F00449581 /* TableViewCell.xib in Resources */,
 				34145F2D1FA7015C00449581 /* maxresdefault.jpg in Resources */,
 				3464F0AC1FA6C8D500E8A9D4 /* Assets.xcassets in Resources */,
+				3479A1671FA964B300081EAB /* viewMore.xib in Resources */,
 				3464F0A71FA6C8D500E8A9D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,7 +22,8 @@ struct getTyGia {
         self.codeCuntry = codeCuntry
     }
 }
-
+var mang2 = [getTyGia]()
+var getCoredata : Bool = false
 var dictionaryCuntry : [String : String] = [
 "DKK": "Danish",
 "TRY" : "Turkish",
